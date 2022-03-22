@@ -1,0 +1,5 @@
+#contenedorPrincipal{
+    background-image: url("/images/pizza.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
