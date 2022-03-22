@@ -21,12 +21,22 @@ function registrarCliente(){
     let segundoApellido=document.getElementById('segundoApellido').value;
     let telefono=document.getElementById('telefono').value;
 
+    let email=document.getElementById('correo').value;
+    let contrasenia=document.getElementById('contrasenia').value;
+
     var data={
-        'primerNombre':primerNombre,
-        'segundoNombre':segundoNombre,
-        'primerApellido':primerApellido,
-        'segundoApellido':segundoApellido,
-        'noTelefono':telefono
+        'cliente':{
+            'primerNombre':primerNombre,
+            'segundoNombre':segundoNombre,
+            'primerApellido':primerApellido,
+            'segundoApellido':segundoApellido,
+            'noTelefono':telefono
+        },
+        "usuarioViewModel":{
+            'email': email,
+            'contrasenia': contrasenia
+        }
+        
     }
 
     fetch('https://localhost:44397/api/clientes',{
