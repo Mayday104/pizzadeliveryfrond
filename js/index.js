@@ -14,6 +14,42 @@
 }
 */
 
+function iniciarSesion(){
+    let emailLogin = document.getElementById('emailLogin').value;
+    let passwordLogin = document.getElementById('contraseniaLogin').value;
+
+    let data={
+        'email': emailLogin,
+        'contrasenia': passwordLogin
+    }
+
+    fetch('https://localhost:44397/api/login',{
+        method:'POST',
+        body:JSON.stringify(data),
+        headers: new Headers({
+            "Content-Type":"application/json"
+        })
+    }).then((resp) => resp.json())
+    .then(function(data){
+        
+
+        if(data.success){
+            Swal.fire(
+                'Inicio de sesion correcto',
+                'Bienvenido ' + data.data.cliente.primerNombre + ' ' + data.data.cliente.primerApellido,
+                'success'
+              )
+        }
+        else{
+            Swal.fire(
+                'Inicio de sesion no valido',
+                data.message,
+                'error'
+              )
+        }
+    })
+}
+
 function registrarCliente(){
     let primerNombre = document.getElementById('primerNombre').value;
     let segundoNombre=document.getElementById('segundoNombre').value;
@@ -24,7 +60,7 @@ function registrarCliente(){
     let email=document.getElementById('correo').value;
     let contrasenia=document.getElementById('contrasenia').value;
 
-    var data={
+    let data={
         'cliente':{
             'primerNombre':primerNombre,
             'segundoNombre':segundoNombre,

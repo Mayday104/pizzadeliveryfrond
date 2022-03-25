@@ -38,9 +38,33 @@
                     <p class="mt-4 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laudantium repellat velit atque hic consequatur quo voluptatem quam! Sed recusandae ut quas provident eum veniam rem similique eligendi omnis esse?</p>
                 </div>
                 <div class="col-md-6 bg-white p-5 rounded">
-                    <h2 class="text-center">Registrarse</h2>
 
-                    <form>
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true"><h4 class="text-center">Iniciar Sesión</h4></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false"><h4 class="text-center">Registrarse</h4></a>
+                    </li>                    
+                  </ul>
+                  <div class="tab-content " id="myTabContent">
+                    <div class="tab-pane fade show active py-5" id="login" role="tabpanel" aria-labelledby="login-tab">
+                      <form>
+                        <div class="mb-3">
+                          <label for="emailLogin" class="form-label">Correo</label>
+                          <input type="email" class="form-control" id="emailLogin">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="contraseniaLogin" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseniaLogin">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="iniciarSesion()">Entrar</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade py-5" id="register" role="tabpanel" aria-labelledby="register-tab">
+                      <form>
                         <div class="mb-3">
                             <label for="primerNombre" class="form-label">Primer Nombre</label>
                             <input type="text" class="form-control" id="primerNombre">
@@ -78,6 +102,13 @@
 
                         <button type="button" class="btn btn-primary" onclick="registrarCliente()">Registrar</button>
                     </form>
+                    </div>
+                    
+                  </div>
+
+                    
+
+                   
                 </div>
             </div>
         </div>
@@ -85,7 +116,9 @@
     
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="js/index.js"></script>
